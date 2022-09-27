@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 /**
@@ -25,8 +26,10 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button btnOperar;
     
-    private int primero;
-    private int segundo;
+    @FXML
+    private RadioButton suma, resta, mult, div;
+    
+    private int primero, segundo, tercero, opt;
     
     @FXML
     public void txtOperando1(){
@@ -40,8 +43,43 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
+    public void sumar(){
+        opt = 1;            
+    }
+    
+    @FXML
+    public void restar(){
+        opt = 2;
+    };
+    
+    @FXML
+    public void dividir(){
+        opt = 3;
+    };
+    
+    @FXML
+    public void multiplicar(){
+        opt = 4;
+    };
+    
+    @FXML
     public void btnOperarOnAction(){
-        resultado.setText(String.valueOf(primero + segundo));
+        switch (opt) {
+            case 1:
+              tercero = primero + segundo;
+              break;
+            case 2:
+              tercero = primero - segundo;
+              break;
+            case 3:
+              tercero = primero / segundo;
+              break;
+            case 4:
+              tercero = primero * segundo;
+              break;
+        }
+
+        resultado.setText(String.valueOf(tercero));
     }
     
     @Override
