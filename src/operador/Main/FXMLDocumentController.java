@@ -51,25 +51,33 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void restar(){
         opt = 2;
-    };
+    }
     
     @FXML
     public void dividir(){
         opt = 3;
-    };
+    }
     
     @FXML
     public void multiplicar(){
         opt = 4;
-    };
+    }
     
     @FXML
-    public void btnOperarOnAction(){        
+    public void btnOperarOnAction(){  
+        if(operando1.getText().isEmpty() || operando2.getText().isEmpty()){
+            opt = 5;
+            suma.setSelected(false);
+            div.setSelected(false);
+            mult.setSelected(false);
+            resta.setSelected(false);
+        }
         System.out.println(opt);
         switch (opt) {
             case 0:
                 resultado.setText("Seleccione una opción");
                 break;
+                
             case 1:
               resultado.setText(String.valueOf(primero + segundo));
               break;
@@ -90,9 +98,14 @@ public class FXMLDocumentController implements Initializable {
               resultado.setText(String.valueOf(primero * segundo));
               break;
               
+            case 5:
+                resultado.setText("Operando vacío");
+                break;
+              
             default:
                 resultado.setText("Error");
         } 
+        
     }
     
     @Override
