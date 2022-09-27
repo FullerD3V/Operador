@@ -29,22 +29,23 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private RadioButton suma, resta, mult, div;
     
-    private int primero, segundo, tercero, opt;
+    private int primero, segundo, opt;
     
     @FXML
     public void txtOperando1(){
         primero = Integer.valueOf(operando1.getText());
-        System.out.println(primero);
+        //System.out.println(primero);
     }
     
     @FXML
     public void txtOperando2(){
         segundo = Integer.valueOf(operando2.getText());
+        //System.out.println(segundo);
     }
     
     @FXML
     public void sumar(){
-        opt = 1;            
+        opt = 1;
     }
     
     @FXML
@@ -63,27 +64,40 @@ public class FXMLDocumentController implements Initializable {
     };
     
     @FXML
-    public void btnOperarOnAction(){
+    public void btnOperarOnAction(){        
+        System.out.println(opt);
         switch (opt) {
+            case 0:
+                resultado.setText("Seleccione una opción");
+                break;
             case 1:
-              tercero = primero + segundo;
+              resultado.setText(String.valueOf(primero + segundo));
               break;
+              
             case 2:
-              tercero = primero - segundo;
+              resultado.setText(String.valueOf(primero - segundo));
               break;
+              
             case 3:
-              tercero = primero / segundo;
+              if (segundo == 0){
+                  resultado.setText("Error, divisor 0");
+              } else {
+                  resultado.setText(String.valueOf(primero / segundo));
+              }                  
               break;
+              
             case 4:
-              tercero = primero * segundo;
+              resultado.setText(String.valueOf(primero * segundo));
               break;
-        }
-
-        resultado.setText(String.valueOf(tercero));
+              
+            default:
+                resultado.setText("Error");
+        } 
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        opt = 0;
     }    
     
 }
