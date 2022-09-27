@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 /**
  *
@@ -32,13 +33,20 @@ public class FXMLDocumentController implements Initializable {
     private int primero, segundo, opt;
     
     @FXML
-    public void txtOperando1(){
-        primero = Integer.valueOf(operando1.getText());
+    public void onKeyTyped(KeyEvent event) {
+        if (!event.getCharacter().matches("[0-9]")) {
+            event.consume();
+        }
+    }
+    
+    @FXML
+    public void operando1OnKeyReleased(KeyEvent event){        
+        primero = Integer.valueOf(operando1.getText());        
         //System.out.println(primero);
     }
     
     @FXML
-    public void txtOperando2(){
+    public void operando2OnKeyReleased(KeyEvent event){
         segundo = Integer.valueOf(operando2.getText());
         //System.out.println(segundo);
     }

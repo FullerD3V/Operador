@@ -26,8 +26,8 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="operando1" layoutX="236.0" layoutY="44.0" onKeyReleased="#txtOperando1" />
-                  <TextField fx:id="operando2" layoutX="236.0" layoutY="95.0" onKeyReleased="#txtOperando2" />
+                  <TextField fx:id="operando1" layoutX="236.0" layoutY="44.0" onKeyReleased="#operando1OnKeyReleased" onKeyTyped="#onKeyTyped" />
+                  <TextField fx:id="operando2" layoutX="236.0" layoutY="95.0" onKeyReleased="#operando2OnKeyReleased" onKeyTyped="#onKeyTyped" />
                   <Button fx:id="btnOperar" layoutX="236.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnOperarOnAction" prefHeight="26.0" prefWidth="170.0" text="Operar">
                      <font>
                         <Font size="15.0" />
