@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="516.0" prefWidth="556.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="operador.Main.FXMLDocumentController">
+   <children>
+      <BorderPane prefHeight="562.0" prefWidth="723.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="127.0" layoutY="49.0" text="Operando 1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="127.0" layoutY="100.0" text="Operando 2">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="operando1" layoutX="236.0" layoutY="44.0" onKeyReleased="#txtOperando1" />
+                  <TextField fx:id="operando2" layoutX="236.0" layoutY="95.0" onKeyReleased="#txtOperando2" />
+                  <Button fx:id="btnOperar" layoutX="236.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnOperarOnAction" prefHeight="26.0" prefWidth="170.0" text="Operar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="224.0" prefWidth="723.0" BorderPane.alignment="CENTER">
+               <children>
+                  <RadioButton fx:id="suma" layoutX="129.0" layoutY="68.0" mnemonicParsing="false" text="Suma">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="resta" layoutX="295.0" layoutY="68.0" mnemonicParsing="false" text="Resta">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="mult" layoutX="129.0" layoutY="122.0" mnemonicParsing="false" text="Multiplicación">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="div" layoutX="295.0" layoutY="122.0" mnemonicParsing="false" text="División">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <Label layoutX="111.0" layoutY="197.0" text="Resultado">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="resultado" layoutX="234.0" layoutY="192.0" />
+               </children>
+            </Pane>
+         </center>
+         <bottom>
+            <Pane prefHeight="58.0" prefWidth="723.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" layoutX="119.0" layoutY="19.0" text="2022-2023 Ronaldo Jiménez © DAM2" textAlignment="JUSTIFY" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
